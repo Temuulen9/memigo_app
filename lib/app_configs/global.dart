@@ -9,7 +9,7 @@ class Globals {
     return _instance!;
   }
 
-  Globals._internal() {}
+  Globals._internal();
 
   Future<void> init() async {
     apiHelper = ApiHelper()
