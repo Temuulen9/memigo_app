@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:memigo/screens/login_screen/login_screen.dart';
-import 'package:memigo/theme.dart';
-import 'package:memigo/util.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

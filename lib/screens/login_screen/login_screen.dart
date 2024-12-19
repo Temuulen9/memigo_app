@@ -25,9 +25,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 );
               },
-              child: Container(
-                child: const Text('Widgets screen'),
-              )),
+              child: const Text('Widgets screen')),
         ],
       ),
     );

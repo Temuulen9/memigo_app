@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:memigo/api/lib/log.dart';
 import 'package:memigo/widgets/button.dart';
-import 'package:memigo/widgets/textfield.dart';
 import 'package:memigo/widgets/textformfield.dart';
 
 class WidgetScreen extends StatefulWidget {
@@ -28,8 +27,7 @@ class _WidgetScreenState extends State<WidgetScreen> {
             const Text('TextFormField'),
             const SizedBox(height: 16),
             CTextFormField(
-              hint: 'Нууц үг',
-              // fillColor: const Color(0xFFF0F0F0),
+              label: 'Нэвтрэх нэр',
               prefix: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -65,7 +63,7 @@ class _WidgetScreenState extends State<WidgetScreen> {
             ),
             const SizedBox(height: 16),
             CTextFormField(
-              hint: 'Нэвтрэх нэр',
+              label: 'Нууц үг',
               fillColor: const Color(0xFFF0F0F0),
               suffix: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -82,7 +80,7 @@ class _WidgetScreenState extends State<WidgetScreen> {
             ),
             const SizedBox(height: 16),
             const CTextFormField(
-              hint: 'Нууц үг',
+              label: 'Утасны дугаар',
               fillColor: Color(0xFFF0F0F0),
             ),
             const SizedBox(height: 16),

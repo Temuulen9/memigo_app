@@ -55,57 +55,61 @@ class CTextFormField extends StatefulWidget {
 class _CTextFormFieldState extends State<CTextFormField> {
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 50,
-      child: TextFormField(
-        autocorrect: false,
-        textCapitalization: widget.textCapitalization,
-        textAlignVertical: TextAlignVertical.center,
-        controller: widget.controller,
-        obscureText: widget.obscureText,
-        keyboardType: widget.keyboardType,
-        textInputAction: widget.textInputAction,
-        autofocus: widget.autofocus,
-        maxLength: widget.maxLength,
-        onTapOutside: (event) {
-          FocusScope.of(context).unfocus();
-        },
-        onChanged: (String value) {
-          widget.onChanged?.call(value);
-        },
-        validator: (String? value) {
-          if (widget.validator != null) {
-            return widget.validator!(value);
-          }
-          return null;
-        },
-        onFieldSubmitted: widget.onFieldSubmitted,
-        readOnly: widget.readOnly,
-        decoration: InputDecoration(
-          fillColor: widget.fillColor ?? Colors.white,
-          hintText: widget.hint,
-          hintStyle: const TextStyle(
-            fontWeight: FontWeight.w300,
-            fontSize: 14,
-            color: Color(0xFF878787),
-          ),
-          suffixIcon: widget.suffix,
-          prefixIcon: widget.prefix,
-          contentPadding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
-          filled: true,
-          isCollapsed: true,
-          focusedBorder: OutlineInputBorder(
-            borderSide: const BorderSide(width: 1, color: Color(0xFF878787)),
-            borderRadius: BorderRadius.circular(10),
-          ),
-          border: OutlineInputBorder(
-            borderSide: const BorderSide(width: 1, color: Color(0xFF878787)),
-            borderRadius: BorderRadius.circular(10),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderSide: const BorderSide(width: 1, color: Color(0xFFF0F0F0)),
-            borderRadius: BorderRadius.circular(12),
-          ),
+    return TextFormField(
+      autocorrect: false,
+      textCapitalization: widget.textCapitalization,
+      textAlignVertical: TextAlignVertical.center,
+      controller: widget.controller,
+      obscureText: widget.obscureText,
+      keyboardType: widget.keyboardType,
+      textInputAction: widget.textInputAction,
+      autofocus: widget.autofocus,
+      maxLength: widget.maxLength,
+      onTapOutside: (event) {
+        FocusScope.of(context).unfocus();
+      },
+      onChanged: (String value) {
+        widget.onChanged?.call(value);
+      },
+      validator: (String? value) {
+        if (widget.validator != null) {
+          return widget.validator!(value);
+        }
+        return null;
+      },
+      onFieldSubmitted: widget.onFieldSubmitted,
+      readOnly: widget.readOnly,
+      decoration: InputDecoration(
+        alignLabelWithHint: true,
+        fillColor: widget.fillColor ?? Colors.white,
+        labelText: widget.label,
+        labelStyle: const TextStyle(
+          fontWeight: FontWeight.w300,
+          fontSize: 14,
+          color: Color(0xFF878787),
+        ),
+        hintText: widget.hint,
+        hintStyle: const TextStyle(
+          fontWeight: FontWeight.w300,
+          fontSize: 14,
+          color: Color(0xFF878787),
+        ),
+        suffixIcon: widget.suffix,
+        prefixIcon: widget.prefix,
+        contentPadding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+        filled: true,
+        isCollapsed: true,
+        focusedBorder: OutlineInputBorder(
+          borderSide: const BorderSide(width: 1, color: Color(0xFF878787)),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        border: OutlineInputBorder(
+          borderSide: const BorderSide(width: 1, color: Color(0xFF878787)),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: const BorderSide(width: 1, color: Color(0xFFF0F0F0)),
+          borderRadius: BorderRadius.circular(12),
         ),
       ),
     );
