@@ -1,0 +1,8 @@
+{
+  "dart.flutterSdkPath": ".fvm/versions/3.22.0",
+  "dart.lineLength": 120,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  }
+}

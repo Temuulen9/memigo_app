@@ -8,16 +8,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final brightness = View.of(context).platformDispatcher.platformBrightness;
+    // final brightness = View.of(context).platformDispatcher.platformBrightness;
 
-    TextTheme textTheme = createTextTheme(context, "Roboto", "Inter");
-    MaterialTheme theme = MaterialTheme(textTheme);
+    // TextTheme textTheme = createTextTheme(context, "Roboto", "Inter");
+    // MaterialTheme theme = MaterialTheme(textTheme);
 
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Memigo',
       debugShowCheckedModeBanner: false,
-      theme: brightness == Brightness.light ? theme.light() : theme.dark(),
-      home: const LoginScreen(),
+      // theme: brightness == Brightness.light ? theme.light() : theme.dark(),
+      home: LoginScreen(),
     );
   }
 }
