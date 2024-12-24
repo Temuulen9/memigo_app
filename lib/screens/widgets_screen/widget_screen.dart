@@ -102,6 +102,7 @@ class _WidgetScreenState extends State<WidgetScreen> {
               text: 'Бүртгүүлэх',
               bgcolor: Colors.white,
               type: ButtonTypes.secondary,
+              size: ButtonSizes.large,
               gradient: const LinearGradient(colors: [Color(0xFFBB63FF), Color(0xFF3632D5)]),
               onClick: () {
                 log.d('click');

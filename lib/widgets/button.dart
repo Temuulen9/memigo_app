@@ -18,6 +18,7 @@ class Button extends StatelessWidget {
   final BorderRadius? borderRadius;
   final List<BoxShadow>? boxShadow;
   final Color? bgcolor;
+  final TextStyle? textStyle;
   final Gradient? gradient;
   const Button({
     super.key,
@@ -27,7 +28,7 @@ class Button extends StatelessWidget {
     this.isDisabled,
     this.icon,
     this.iconData,
-    this.size = ButtonSizes.medium,
+    this.size = ButtonSizes.large,
     this.type = ButtonTypes.primary,
     this.suffixIcon,
     this.expanded = true,
@@ -37,6 +38,7 @@ class Button extends StatelessWidget {
     this.borderRadius,
     this.boxShadow,
     this.bgcolor,
+    this.textStyle,
     this.gradient,
   });
 
@@ -47,6 +49,7 @@ class Button extends StatelessWidget {
 
     return Material(
       borderRadius: BorderRadius.circular(10),
+      color: bgColor,
       child: InkWell(
         borderRadius: BorderRadius.circular(10),
         onTap: isDisabled == true || isLoading == true ? null : onClick,
@@ -116,20 +119,21 @@ class Button extends StatelessWidget {
   }
 
   Widget textSection(BuildContext context, {required bool isLoading}) {
-    Map<ButtonTypes, Color> iconColor = {
+    Map<ButtonTypes, Color> textColor = {
       ButtonTypes.primary: Colors.white,
       ButtonTypes.secondary: const Color(0xFF6C63FF),
       ButtonTypes.tertiary: Colors.black,
     };
-    Color color = isDisabled == true ? Colors.red : iconColor[type]!;
+    Color color = isDisabled == true ? Colors.red : textColor[type]!;
 
     return Text(
       isLoading ? '' : text ?? '',
-      style: TextStyle(
-        color: color,
-        fontSize: 14,
-        fontWeight: FontWeight.bold,
-      ),
+      style: textStyle ??
+          TextStyle(
+            color: color,
+            fontSize: 14,
+            fontWeight: FontWeight.bold,
+          ),
 
       // style: textStyle[size]?.copyWith(color: color),
     );

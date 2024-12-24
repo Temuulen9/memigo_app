@@ -23,7 +23,7 @@ class CTextFormField extends StatefulWidget {
   final bool readOnly;
   final bool autofocus;
   final TextCapitalization textCapitalization;
-
+  final FocusNode? focusNode;
   const CTextFormField({
     super.key,
     this.hint,
@@ -46,6 +46,7 @@ class CTextFormField extends StatefulWidget {
     this.readOnly = false,
     this.autofocus = false,
     this.textCapitalization = TextCapitalization.none,
+    this.focusNode,
   });
 
   @override
@@ -79,13 +80,14 @@ class _CTextFormFieldState extends State<CTextFormField> {
       },
       onFieldSubmitted: widget.onFieldSubmitted,
       readOnly: widget.readOnly,
+      focusNode: widget.focusNode,
       decoration: InputDecoration(
         alignLabelWithHint: true,
         fillColor: widget.fillColor ?? Colors.white,
         labelText: widget.label,
         labelStyle: const TextStyle(
           fontWeight: FontWeight.w300,
-          fontSize: 14,
+          fontSize: 16,
           color: Color(0xFF878787),
         ),
         hintText: widget.hint,
